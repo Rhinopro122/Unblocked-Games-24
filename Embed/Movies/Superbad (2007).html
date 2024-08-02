@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Superbad (2007)</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            transition: opacity 1s ease-out;
+        }
+
+        .info.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .menu {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            flex-direction: row;
+            justify-content: center;
+            padding: 10px;
+            box-sizing: border-box;
+            border-top: 1px solid #333;
+        }
+
+        .menu.show {
+            display: flex;
+        }
+
+        .menu-item {
+            margin: 0 10px;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container" id="video-container">
+        <!-- Embed Google Drive Video -->
+        <iframe id="video-frame" src="https://drive.google.com/file/d/1j2z8AILSMpaQzgB9OiY65WdYHuNns5cO/view" allowfullscreen></iframe>
+
+        <!-- Movie Info -->
+        <div class="info" id="movie-info">
+            <div id="movie-title">Superbad (2007)</div>
+            <div id="movie-quality">HD</div>
+        </div>
+
+        <!-- Menu -->
+        <div class="menu" id="server-menu">
+            <div class="menu-item" data-src="https://drive.google.com/file/d/1j2z8AILSMpaQzgB9OiY65WdYHuNns5cO/view" data-quality="HD">Google Drive (1080p)</div>
+            <!-- Add more server options as needed -->
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle menu and video source changes
+        document.addEventListener("DOMContentLoaded", function() {
+            const videoContainer = document.getElementById('video-container');
+            const movieInfo = document.getElementById('movie-info');
+            const serverMenu = document.getElementById('server-menu');
+            const videoFrame = document.getElementById('video-frame');
+
+            // Show the movie info and hide after 5 seconds
+            setTimeout(function() {
+                movieInfo.classList.add('hidden');
+            }, 5000);
+
+            let menuTimeout;
+
+            function showMenu() {
+                serverMenu.classList.add('show');
+                clearTimeout(menuTimeout);
+                menuTimeout = setTimeout(function() {
+                    serverMenu.classList.remove('show');
+                }, 5000);
+            }
+
+            function resetMenuTimeout() {
+                serverMenu.classList.add('show');
+                clearTimeout(menuTimeout);
+                menuTimeout = setTimeout(function() {
+                    serverMenu.classList.remove('show');
+                }, 5000);
+            }
+
+            videoContainer.addEventListener('mouseenter', showMenu);
+            videoContainer.addEventListener('click', showMenu);
+
+            serverMenu.addEventListener('click', function(event) {
+                if (event.target.classList.contains('menu-item')) {
+                    const newSrc = event.target.getAttribute('data-src');
+                    const newQuality = event.target.getAttribute('data-quality');
+                    videoFrame.src = newSrc;
+                    document.getElementById('movie-quality').textContent = newQuality;
+                }
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!serverMenu.contains(event.target) && !videoContainer.contains(event.target)) {
+                    serverMenu.classList.remove('show');
+                }
+            });
+
+            // Show menu on mouse move, scroll, or touch
+            videoContainer.addEventListener('mousemove', resetMenuTimeout);
+            videoContainer.addEventListener('scroll', resetMenuTimeout);
+            videoContainer.addEventListener('touchstart', resetMenuTimeout);
+        });
+    </script>
+</body>
+</html>
