@@ -16,6 +16,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
 
         .header {
@@ -23,56 +24,37 @@
             color: #fff;
             text-align: center;
             padding: 10px 0;
+            position: relative;
+        }
+
+        .search-bar {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .search-bar input {
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
         }
 
         main {
             padding: 20px;
         }
 
-        /* Featured Games Styles */
-        .featured-games {
-            margin-bottom: 20px;
-        }
-
-        .featured-games h2 {
+        h2 {
+            margin-top: 20px;
             margin-bottom: 10px;
             text-align: center;
         }
 
-        .featured-games .media-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
+        /* Section Styles */
+        .section {
+            margin-bottom: 20px;
         }
 
-        .featured-games .media-item {
-            text-align: center;
-            flex: 1 1 200px;
-        }
-
-        .featured-games .game-poster {
-            width: 100%;
-            height: auto;
-            max-width: 200px;
-            border-radius: 5px;
-        }
-
-        .featured-games .watch-now {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .featured-games .watch-now:hover {
-            background-color: #0056b3;
-        }
-
-        /* Media Sections */
         .media-list {
             display: flex;
             flex-wrap: wrap;
@@ -85,7 +67,7 @@
             flex: 1 1 200px;
         }
 
-        .poster, .youtube-thumbnail, .game-poster {
+        .poster, .youtube-thumbnail, .game-poster, .music-cover {
             width: 100%;
             height: auto;
             max-width: 200px;
@@ -106,6 +88,11 @@
             background-color: #0056b3;
         }
 
+        /* Music Video Styles */
+        .youtube-thumbnail {
+            max-width: 200px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .media-list {
@@ -118,11 +105,14 @@
 <body>
     <header class="header">
         <h1>School Media Library</h1>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search...">
+        </div>
     </header>
 
     <main>
         <!-- Featured Games Section -->
-        <section class="featured-games">
+        <section class="section featured-games">
             <h2>Featured Games</h2>
             <div class="media-list">
                 <div class="media-item">
@@ -135,29 +125,152 @@
                     <img class="game-poster" src="game2-poster.jpg" alt="Game 2 Poster">
                     <a href="https://example.com/game2" class="watch-now">Play Now</a>
                 </div>
+                <div class="media-item">
+                    <h3>Game 3</h3>
+                    <img class="game-poster" src="game3-poster.jpg" alt="Game 3 Poster">
+                    <a href="https://example.com/game3" class="watch-now">Play Now</a>
+                </div>
                 <!-- Add more featured games as needed -->
             </div>
         </section>
 
-        <!-- Other sections (Movies, TV Shows, etc.) -->
-        <section class="movies">
+        <!-- Movies Section -->
+        <section class="section movies">
             <h2>Comedy Movies</h2>
             <div class="media-list">
                 <div class="media-item">
-                    <h3>Movie 1</h3>
-                    <img class="poster" src="movie1-poster.jpg" alt="Movie 1 Poster">
-                    <a href="https://example.com/movie1" class="watch-now">Watch Now</a>
+                    <h3>Superbad (2007)</h3>
+                    <img class="poster" src="/IMG/Movies/Poster/Superbad (2007).jpg" alt="Movie 1 Poster">
+                    <a href="/Embed/Movies/Superbad (2007).html" class="watch-now">Watch Now</a>
                 </div>
                 <div class="media-item">
                     <h3>Movie 2</h3>
                     <img class="poster" src="movie2-poster.jpg" alt="Movie 2 Poster">
                     <a href="https://example.com/movie2" class="watch-now">Watch Now</a>
                 </div>
+                <div class="media-item">
+                    <h3>Movie 3</h3>
+                    <img class="poster" src="movie3-poster.jpg" alt="Movie 3 Poster">
+                    <a href="https://example.com/movie3" class="watch-now">Watch Now</a>
+                </div>
                 <!-- Add more movies as needed -->
             </div>
         </section>
 
-        <!-- Add other sections like TV Shows, Music, etc. -->
+        <!-- TV Shows Section -->
+        <section class="section tv-shows">
+            <h2>Popular TV Shows</h2>
+            <div class="media-list">
+                <div class="media-item">
+                    <h3>Show 1</h3>
+                    <img class="poster" src="show1-poster.jpg" alt="Show 1 Poster">
+                    <a href="https://example.com/show1" class="watch-now">Watch Now</a>
+                </div>
+                <div class="media-item">
+                    <h3>Show 2</h3>
+                    <img class="poster" src="show2-poster.jpg" alt="Show 2 Poster">
+                    <a href="https://example.com/show2" class="watch-now">Watch Now</a>
+                </div>
+                <div class="media-item">
+                    <h3>Show 3</h3>
+                    <img class="poster" src="show3-poster.jpg" alt="Show 3 Poster">
+                    <a href="https://example.com/show3" class="watch-now">Watch Now</a>
+                </div>
+                <!-- Add more TV shows as needed -->
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section class="section music">
+            <h2>Featured Music</h2>
+            <div class="media-list">
+                <div class="media-item">
+                    <h3>Album 1</h3>
+                    <img class="music-cover" src="album1-cover.jpg" alt="Album 1 Cover">
+                    <a href="https://example.com/album1" class="watch-now">Listen Now</a>
+                </div>
+                <div class="media-item">
+                    <h3>Album 2</h3>
+                    <img class="music-cover" src="album2-cover.jpg" alt="Album 2 Cover">
+                    <a href="https://example.com/album2" class="watch-now">Listen Now</a>
+                </div>
+                <div class="media-item">
+                    <h3>Album 3</h3>
+                    <img class="music-cover" src="album3-cover.jpg" alt="Album 3 Cover">
+                    <a href="https://example.com/album3" class="watch-now">Listen Now</a>
+                </div>
+                <!-- Add more music as needed -->
+            </div>
+        </section>
+
+        <!-- Music Videos Section -->
+        <section class="section music-videos">
+            <h2>Music Videos</h2>
+            <div class="media-list">
+                <div class="media-item">
+                    <h3>Video 1</h3>
+                    <img class="youtube-thumbnail" src="video1-thumbnail.jpg" alt="Video 1 Thumbnail">
+                    <a href="https://youtube.com/watch?v=video1" class="watch-now">Watch Now</a>
+                </div>
+                <div class="media-item">
+                    <h3>Video 2</h3>
+                    <img class="youtube-thumbnail" src="video2-thumbnail.jpg" alt="Video 2 Thumbnail">
+                    <a href="https://youtube.com/watch?v=video2" class="watch-now">Watch Now</a>
+                </div>
+                <div class="media-item">
+                    <h3>Video 3</h3>
+                    <img class="youtube-thumbnail" src="video3-thumbnail.jpg" alt="Video 3 Thumbnail">
+                    <a href="https://youtube.com/watch?v=video3" class="watch-now">Watch Now</a>
+                </div>
+                <!-- Add more music videos as needed -->
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section class="section games">
+            <h2>All Games</h2>
+            <div class="media-list">
+                <div class="media-item">
+                    <h3>Game 4</h3>
+                    <img class="game-poster" src="game4-poster.jpg" alt="Game 4 Poster">
+                    <a href="https://example.com/game4" class="watch-now">Play Now</a>
+                </div>
+                <div class="media-item">
+                    <h3>Game 5</h3>
+                    <img class="game-poster" src="game5-poster.jpg" alt="Game 5 Poster">
+                    <a href="https://example.com/game5" class="watch-now">Play Now</a>
+                </div>
+                <div class="media-item">
+                    <h3>Game 6</h3>
+                    <img class="game-poster" src="game6-poster.jpg" alt="Game 6 Poster">
+                    <a href="https://example.com/game6" class="watch-now">Play Now</a>
+                </div>
+                <!-- Add more games as needed -->
+            </div>
+        </section>
+
+        <!-- YouTube Videos Section -->
+        <section class="section youtube-videos">
+            <h2>Featured YouTube Videos</h2>
+            <div class="media-list">
+                <div class="media-item">
+                    <h3>Video 4</h3>
+                    <img class="youtube-thumbnail" src="video4-thumbnail.jpg" alt="Video 4 Thumbnail">
+                    <a href="https://youtube.com/watch?v=video4" class="watch-now">Watch Now</a>
+                </div>
+                <div class="media-item">
+                    <h3>Video 5</h3>
+                    <img class="youtube-thumbnail" src="video5-thumbnail.jpg" alt="Video 5 Thumbnail">
+                    <a href="https://youtube.com/watch?v=video5" class="watch-now">Watch Now</a>
+                </div>
+                <div class="media-item">
+                    <h3>Video 6</h3>
+                    <img class="youtube-thumbnail" src="video6-thumbnail.jpg" alt="Video 6 Thumbnail">
+                    <a href="https://youtube.com/watch?v=video6" class="watch-now">Watch Now</a>
+                </div>
+                <!-- Add more YouTube videos as needed -->
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
