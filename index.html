@@ -3,105 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashten's Unblocked Games 24</title>
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="apple-mobile-web-app-title" content="School Media Library">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="/manifest.json">
+    <title>School Media Library</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
         }
 
         .header {
-            background-color: #007bff;
-            padding: 1em;
+            background-color: #333;
             color: #fff;
             text-align: center;
+            padding: 10px 0;
         }
 
-        .header h1 {
-            margin: 0;
+        main {
+            padding: 20px;
         }
 
-        .nav {
+        /* Featured Games Styles */
+        .featured-games {
+            margin-bottom: 20px;
+        }
+
+        .featured-games h2 {
+            margin-bottom: 10px;
             text-align: center;
-            padding: 1em;
-            background-color: #fff;
         }
 
-        .nav a {
-            margin: 0 1em;
+        .featured-games .media-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .featured-games .media-item {
+            text-align: center;
+            flex: 1 1 200px;
+        }
+
+        .featured-games .game-poster {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            border-radius: 5px;
+        }
+
+        .featured-games .watch-now {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
             text-decoration: none;
-            color: #007bff;
+            border-radius: 5px;
         }
 
-        .section {
-            padding: 2em;
-            background-color: #fff;
-            margin: 1em 0;
+        .featured-games .watch-now:hover {
+            background-color: #0056b3;
         }
 
-        .section h2 {
-            margin-top: 0;
-        }
-
+        /* Media Sections */
         .media-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
             justify-content: center;
         }
 
         .media-item {
             text-align: center;
+            flex: 1 1 200px;
         }
 
-        .media-item img {
-            max-width: 100%;
+        .poster, .youtube-thumbnail, .game-poster {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
             border-radius: 5px;
-            margin-bottom: 0.5em;
-        }
-
-        .square-img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-
-        .youtube-thumbnail, .music-video-thumbnail {
-            max-width: 150px;
-            border-radius: 5px;
-        }
-
-        .media-item h3 {
-            margin: 0.5em 0;
         }
 
         .watch-now {
-            display: block;
-            padding: 0.5em 1em;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
             background-color: #007bff;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 0.5em;
-            text-align: center;
         }
 
         .watch-now:hover {
             background-color: #0056b3;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
             .media-list {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-        }
-
-        @media (max-width: 480px) {
-            .media-list {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -111,156 +120,44 @@
         <h1>School Media Library</h1>
     </header>
 
-    <nav class="nav">
-        <a href="#movies">Movies</a>
-        <a href="#tv-shows">TV Shows</a>
-        <a href="#music">Music</a>
-        <a href="#music-videos">Music Videos</a>
-        <a href="#games">Games</a>
-        <a href="#ebooks">Ebooks</a>
-        <a href="#youtube-videos">YouTube Videos</a>
-    </nav>
-
     <main>
-        <!-- Comedy Movies Section -->
-        <section id="movies" class="section">
-            <h2>Comedy Movies</h2>
-            <div class="media-list">
-                <div class="media-item">
-                    <h3>Comedy Movie 1</h3>
-                    <img src="comedy-movie-poster1.jpg" alt="Comedy Movie Poster 1">
-                    <a href="link-to-comedy-movie1" class="watch-now">Watch Now</a>
-                </div>
-                <div class="media-item">
-                    <h3>Comedy Movie 2</h3>
-                    <img src="comedy-movie-poster2.jpg" alt="Comedy Movie Poster 2">
-                    <a href="link-to-comedy-movie2" class="watch-now">Watch Now</a>
-                </div>
-                <!-- Add more comedy movies as needed -->
-            </div>
-        </section>
-
-        <!-- Action Movies Section -->
-        <section id="action-movies" class="section">
-            <h2>Action Movies</h2>
-            <div class="media-list">
-                <div class="media-item">
-                    <h3>Action Movie 1</h3>
-                    <img src="action-movie-poster1.jpg" alt="Action Movie Poster 1">
-                    <a href="link-to-action-movie1" class="watch-now">Watch Now</a>
-                </div>
-                <div class="media-item">
-                    <h3>Action Movie 2</h3>
-                    <img src="action-movie-poster2.jpg" alt="Action Movie Poster 2">
-                    <a href="link-to-action-movie2" class="watch-now">Watch Now</a>
-                </div>
-                <!-- Add more action movies as needed -->
-            </div>
-        </section>
-
-        <!-- TV Shows Section -->
-        <section id="tv-shows" class="section">
-            <h2>TV Shows</h2>
-            <div class="media-list">
-                <div class="media-item">
-                    <h3>TV Show 1</h3>
-                    <img src="tv-show-poster1.jpg" alt="TV Show Poster 1">
-                    <a href="link-to-tv-show1">More Info</a>
-                </div>
-                <div class="media-item">
-                    <h3>TV Show 2</h3>
-                    <img src="tv-show-poster2.jpg" alt="TV Show Poster 2">
-                    <a href="link-to-tv-show2">More Info</a>
-                </div>
-                <!-- Add more TV shows as needed -->
-            </div>
-        </section>
-
-        <!-- Music Section -->
-        <section id="music" class="section">
-            <h2>Music</h2>
-            <div class="media-list">
-                <div class="media-item">
-                    <h3>Music Album 1</h3>
-                    <img class="square-img" src="music-cover1.jpg" alt="Music Cover 1">
-                    <a href="link-to-music1">More Info</a>
-                </div>
-                <div class="media-item">
-                    <h3>Music Album 2</h3>
-                    <img class="square-img" src="music-cover2.jpg" alt="Music Cover 2">
-                    <a href="link-to-music2">More Info</a>
-                </div>
-                <!-- Add more music as needed -->
-            </div>
-        </section>
-
-        <!-- Music Videos Section -->
-        <section id="music-videos" class="section">
-            <h2>Music Videos</h2>
-            <div class="media-list">
-                <div class="media-item">
-                    <h3>Music Video 1</h3>
-                    <img class="music-video-thumbnail" src="music-video-thumbnail1.jpg" alt="Music Video Thumbnail 1">
-                    <a href="link-to-music-video1" class="watch-now">Watch Now</a>
-                </div>
-                <div class="media-item">
-                    <h3>Music Video 2</h3>
-                    <img class="music-video-thumbnail" src="music-video-thumbnail2.jpg" alt="Music Video Thumbnail 2">
-                    <a href="link-to-music-video2" class="watch-now">Watch Now</a>
-                </div>
-                <!-- Add more music videos as needed -->
-            </div>
-        </section>
-
-        <!-- Games Section -->
-        <section id="games" class="section">
-            <h2>Games</h2>
+        <!-- Featured Games Section -->
+        <section class="featured-games">
+            <h2>Featured Games</h2>
             <div class="media-list">
                 <div class="media-item">
                     <h3>Game 1</h3>
-                    <a href="link-to-game1">More Info</a>
+                    <img class="game-poster" src="game1-poster.jpg" alt="Game 1 Poster">
+                    <a href="https://example.com/game1" class="watch-now">Play Now</a>
                 </div>
                 <div class="media-item">
                     <h3>Game 2</h3>
-                    <a href="link-to-game2">More Info</a>
+                    <img class="game-poster" src="game2-poster.jpg" alt="Game 2 Poster">
+                    <a href="https://example.com/game2" class="watch-now">Play Now</a>
                 </div>
-                <!-- Add more games as needed -->
+                <!-- Add more featured games as needed -->
             </div>
         </section>
 
-        <!-- Ebooks Section -->
-        <section id="ebooks" class="section">
-            <h2>Ebooks</h2>
+        <!-- Other sections (Movies, TV Shows, etc.) -->
+        <section class="movies">
+            <h2>Comedy Movies</h2>
             <div class="media-list">
                 <div class="media-item">
-                    <h3>Ebook 1</h3>
-                    <a href="link-to-ebook1">More Info</a>
+                    <h3>Movie 1</h3>
+                    <img class="poster" src="movie1-poster.jpg" alt="Movie 1 Poster">
+                    <a href="https://example.com/movie1" class="watch-now">Watch Now</a>
                 </div>
                 <div class="media-item">
-                    <h3>Ebook 2</h3>
-                    <a href="link-to-ebook2">More Info</a>
+                    <h3>Movie 2</h3>
+                    <img class="poster" src="movie2-poster.jpg" alt="Movie 2 Poster">
+                    <a href="https://example.com/movie2" class="watch-now">Watch Now</a>
                 </div>
-                <!-- Add more ebooks as needed -->
+                <!-- Add more movies as needed -->
             </div>
         </section>
 
-        <!-- YouTube Videos Section -->
-        <section id="youtube-videos" class="section">
-            <h2>YouTube Videos</h2>
-            <div class="media-list">
-                <div class="media-item">
-                    <h3>YouTube Video 1</h3>
-                    <img class="youtube-thumbnail" src="youtube-thumbnail1.jpg" alt="YouTube Video Thumbnail 1">
-                    <a href="https://www.youtube.com/watch?v=VIDEO_ID1" class="watch-now">Watch Now</a>
-                </div>
-                <div class="media-item">
-                    <h3>YouTube Video 2</h3>
-                    <img class="youtube-thumbnail" src="youtube-thumbnail2.jpg" alt="YouTube Video Thumbnail 2">
-                    <a href="https://www.youtube.com/watch?v=VIDEO_ID2" class="watch-now">Watch Now</a>
-                </div>
-                <!-- Add more YouTube videos as needed -->
-            </div>
-        </section>
+        <!-- Add other sections like TV Shows, Music, etc. -->
     </main>
 
     <footer class="footer">
