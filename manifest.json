@@ -1,11 +1,10 @@
 {
     "name": "Unblocked Games 24",
     "short_name": "UG24",
-    "description": "Your source for unblocked entertainment including movies, TV shows, music, and more!",
-    "start_url": "/index.html",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
-    "theme_color": "#000000",
+    "theme_color": "#333333",
     "icons": [
         {
             "src": "img/icons/icon-192x192.png",
